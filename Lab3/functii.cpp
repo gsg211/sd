@@ -38,12 +38,27 @@ void sterge_cap(nod*& cap)
 
 void inserare_in(nod*p,int poz,int data)
 {
-    while(p!=NULL && poz)
+    int pozc=1;
+    while(p!=NULL && pozc!=poz)
     {
         p=p->leg;
+        pozc++;   
     }
     nod* q;
     p->leg=q->leg;
     p->data=data;
     q->leg=p;
+}
+
+void sterge_in(nod*p,int poz)
+{
+    int pozc=1;
+    while(p!=NULL && pozc!=poz)
+    {
+        p=p->leg;
+        pozc++;   
+    }
+    nod* q=p;
+    p->leg=p->leg->leg;
+    delete q;
 }

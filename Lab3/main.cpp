@@ -11,7 +11,7 @@ int main()
    
     inserare_in(cap,1,100);
     afis(cap);
-    sterge_in(cap,2);
+    
     afis(cap);
     return 0; 
 }
