@@ -29,4 +29,5 @@ nod* inversare(nod* cap);
 
 void inserare_in2(nod2* p,char nume[], char telefon[]);
 void inserare_cap2(nod2*& cap,char nume[], char telefon[]);
+void afis2(nod2 *p);
 #endif 

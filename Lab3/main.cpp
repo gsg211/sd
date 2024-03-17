@@ -17,6 +17,7 @@ int main()
     nod2*lista=NULL;
     inserare_cap2(lista,"costel","5226");
     inserare_in2(lista,"Mirel","0743");
-    inserare_in2(lista,"Gigel","0743");   
+    inserare_in2(lista,"Gigel","0743");
+    afis2(lista);   
     return 0; 
 }
