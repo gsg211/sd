@@ -222,3 +222,38 @@ void sterge2(nod2*&cap,char nume[])
     }
 }
 
+
+//problema 3
+void concat(nod* cap1,nod* cap2)
+{
+    nod*fin=cap1;
+    while(fin->leg!=NULL)
+    {
+        fin=fin->leg;
+    }
+    fin->leg=cap2;
+}
+
+nod* interclass(nod* x,nod* y)
+{
+    nod* z=NULL;
+    while(x!=NULL && y!=NULL)
+    {
+        inserare_cap(z,x->data);
+        inserare_cap(z,y->data);
+        y=y->leg;
+        x=x->leg;
+    }
+    while(x!=NULL)
+    {
+        inserare_cap(z,x->data);
+        x=x->leg;
+    }
+    while (y!=NULL)
+    {
+        inserare_cap(z,y->data);
+        y=y->leg;
+    }
+    z=inversare(z);
+    return z;
+}

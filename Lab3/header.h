@@ -1,7 +1,7 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-//lista problema 1
+//lista problema 1 si problema 3
 struct nod
 {
     int data;
@@ -33,4 +33,8 @@ void inserare2(nod2* &cap,char nume[], char telefon[]);
 void afis2(nod2 *p);
 void cautaretelefon(nod2*p,char nume[]);
 void sterge2(nod2*&cap,char nume[]);
+
+//functii p3
+void concat(nod* cap1,nod* cap2);
+nod* interclass(nod* x,nod* y);
 #endif 

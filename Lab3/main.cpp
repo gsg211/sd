@@ -12,22 +12,12 @@ int main()
     {   
         inserare_cap(cap,x);
         std::cin>>x;
-    } 
+    }
+
     */
 
+    /*problema 2
     nod2*lista=NULL;
-    inserare2(lista,"Biju","5226");
-    inserare2(lista,"Andrei","0743");
-    inserare2(lista,"Zerxes","0743");
-    inserare2(lista,"Gigel","0743");
-    inserare2(lista,"Aaneei","0743");
-    inserare2(lista,"Anastasia","0743");
-    inserare2(lista,"Bab","07435654");
-    
-    sterge2(lista,"Bab");
-    sterge2(lista,"Aaneei");
-    afis2(lista);
-
     char optiune[20]={},nume[20],telefon[20];
    
     while(1)
@@ -66,5 +56,29 @@ int main()
             afis2(lista);
         }
     }
-    return 0; 
+    */
+    
+    /*problema 3
+    nod* lista1=NULL;
+    nod* lista2=NULL;
+    inserare_cap(lista1,4);
+    inserare_cap(lista1,3);
+    inserare_cap(lista1,2);
+    inserare_cap(lista1,1);
+    inserare_cap(lista1,0);
+    
+    afis(lista1);
+    inserare_cap(lista2,2028);
+    inserare_cap(lista2,2027);
+    inserare_cap(lista2,2026);
+    inserare_cap(lista2,2025);
+    inserare_cap(lista2,2024);
+    inserare_cap(lista2,2023);
+    inserare_cap(lista2,2022);
+    inserare_cap(lista2,2021);
+    afis(lista2);
+    nod*lista3=interclass(lista1,lista2);
+    afis(lista3);
+    */
+    return 0;
 }
