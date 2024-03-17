@@ -1,6 +1,7 @@
 #include <iostream>
 #include "header.h"
 
+//functii problema 1
 void inserare_cap(nod*&cap,int data)
 {
     nod *p=new nod;
@@ -76,6 +77,8 @@ void sterge_poz(nod *p,int poz)
     delete q;
 }
 
+
+//functii problema 2
 void inserare_cap_lc(nod*&cap,int data)
 {
     nod *p=new nod;
@@ -109,13 +112,85 @@ nod* citire_lc()
 void afis_lc(nod *cap)
 {
     nod*p=cap;
-    if(p!=NULL)
+    while (p->next!=cap)
     {
-        do
-        {
-            std::cout<<p<<std::endl;
-            p=p->next;
-        } while (p!=cap);
-        
+        std::cout<<p->data<<std::endl;
+        p=p->next;
     }
+    std::cout<<p->data<<std::endl;
+    std::cout<<"\n";
+}
+
+void permutari_lc(nod *cap)
+{
+    nod*p=cap;
+    while (p->next!=cap)
+    {
+        afis_lc(p);
+        p=p->next;
+    }
+    afis_lc(p);
+    p=p->next;;
+}
+
+nod* inversare(nod* cap)
+{
+    nod *p,*q,*r;
+    p=cap;
+    q=p->next;
+    r=p->next->next;
+    p->next=0;
+    while(r->next!=cap)
+    {
+        q->next=p;
+        p=q;
+        q=r;
+        r=r->next;
+    }
+    q->next=p;
+    r->next=q;
+    cap->next=r;
+    return r;
+}
+
+//functii problema 3
+void concat(nod* cap1,nod* cap2)
+{
+    nod*fin=cap1;
+    while(fin->next!=cap1)
+    {
+        fin=fin->next;
+    }
+    fin->next=cap2;
+    fin=fin->next;
+    while(fin->next!=cap2)
+    {
+        fin=fin->next;
+    }
+    fin->next=cap1;
+}
+
+nod* interclass(nod* cap1,nod* cap2)
+{
+    nod* z=NULL;
+    nod* x=cap1;
+    nod* y=cap2;
+    while(x->next!=cap1 && y->next!=cap2)
+    {
+        inserare_cap_lc(z,x->data);
+        inserare_cap_lc(z,y->data);
+        y=y->next;
+        x=x->next;
+    }
+    while(x->next!=cap1)
+    {
+        inserare_cap_lc(z,x->data);
+        x=x->next;
+    }
+    while (y->next!=cap2)
+    {
+        inserare_cap_lc(z,y->data);
+        y=y->next;
+    }
+    return z;
 }
