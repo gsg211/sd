@@ -138,38 +138,31 @@ nod* inversare(nod* cap)
 
 //problema 2
 
-void inserare_cap2(nod2*& p,char nume[], char telefon[])
+void inserare2(nod2* &cap,char nume[], char telefon[])
 {
-    nod2 *q=new nod2;
-    q->leg=p;
-    strcpy(q->nume,nume);
-    strcpy(q->telefon,telefon);
-    p=q;
-}
-
-void inserare_in2(nod2* p,char nume[], char telefon[])
-{
-    
-    char temp[20];
-    while((p!=NULL && p->leg!=NULL) &&strcmp(p->nume,p->leg->nume)<0)
+    nod2*p=cap;
+    if(cap==NULL || strcmp(nume,p->nume)<0)
     {
-        p=p->leg;
+        nod2 *q=new nod2;
+        q->leg=p;
+        strcpy(q->nume,nume);
+        strcpy(q->telefon,telefon);
+        cap=q;
     }
-    
-    nod2 *q=new nod2;
-    strcpy(q->nume,nume);
-    strcpy(q->telefon,telefon);   
-    q->leg=p->leg;
-    p->leg=q;
-    /*
-    strcpy(temp,q->nume);
-    strcpy(q->nume,p->nume);
-    strcpy(p->nume,temp);
-
-    strcpy(temp,q->telefon);
-    strcpy(q->telefon,p->telefon);
-    strcpy(p->telefon,telefon);
-    */
+    else
+    {
+        char temp[20];
+        while((p!=NULL && p->leg!=NULL) &&strcmp(nume,p->leg->nume)>0)
+        {
+            p=p->leg;
+        }
+        
+        nod2 *q=new nod2;
+        strcpy(q->nume,nume);
+        strcpy(q->telefon,telefon);   
+        q->leg=p->leg;
+        p->leg=q;
+    }
 }
 
 void afis2(nod2 *p)
@@ -183,3 +176,49 @@ void afis2(nod2 *p)
     }
     std::cout<<std::endl;
 }
+
+void cautaretelefon(nod2*p,char nume[])
+{
+    while(p!=NULL && strcmp(nume,p->nume)!=0)
+    {
+        p=p->leg;  
+    }
+    if(p==NULL)
+    {
+        std::cout<<"Persoana nu se afla in agenda"<<std::endl;
+    }
+    else
+    {
+        std::cout<<p->telefon<<std::endl;
+    }
+}
+
+
+void sterge2(nod2*&cap,char nume[])
+{
+    nod2*p=cap;
+    if(strcmp(nume,p->nume)!=0)
+    {
+        while(p!=NULL && strcmp(nume,p->leg->nume)!=0)
+        {
+            p=p->leg;  
+        }
+        if(p!=NULL)
+        {
+            nod2* q=p->leg;
+            p->leg=p->leg->leg;
+            delete q;
+        }
+        else
+        {
+            std::cout<<"Persoana nu se afla in agenda"<<std::endl;
+        }
+    }
+    else
+    {
+        nod2*q=cap;
+        cap=cap->leg;
+        delete q;
+    }
+}
+

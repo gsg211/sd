@@ -8,6 +8,7 @@ struct nod
     nod* leg;
 };
 
+//lista problema 2
 struct nod2
 {
     char nume[20];
@@ -15,7 +16,7 @@ struct nod2
     nod2* leg;
 };
 
-
+//functii p1
 void sterge_cap(nod*& cap);
 void afis(nod *p);
 nod* cautare(nod *p,int data);
@@ -27,7 +28,9 @@ int mij_element(nod* p);
 void afis_spate(nod *p);
 nod* inversare(nod* cap);
 
-void inserare_in2(nod2* p,char nume[], char telefon[]);
-void inserare_cap2(nod2*& cap,char nume[], char telefon[]);
+//functii p2
+void inserare2(nod2* &cap,char nume[], char telefon[]);
 void afis2(nod2 *p);
+void cautaretelefon(nod2*p,char nume[]);
+void sterge2(nod2*&cap,char nume[]);
 #endif 
