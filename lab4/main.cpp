@@ -15,7 +15,6 @@ int main()
     afis(lista);
     */
     
-
     /*problema 2
 
     nod* lc=NULL;
