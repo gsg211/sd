@@ -3,7 +3,7 @@
 #define DIMMAX 8
 typedef int type;
 
-//alocata static
+//tema 1 coada circulara alocata static
 struct staticQueue 
 {
     int head,tail;
@@ -15,7 +15,7 @@ type get(staticQueue& q);
 type front(staticQueue& q); 
 int isEmpty(staticQueue& q);
 
-//coada alocata dinamic 
+//tema 2 coada circulara alocata dinamic 
 
 struct Element
 {
@@ -26,7 +26,7 @@ struct Element
 struct dynamicQueue 
 {
     Element* tail;
-    Element* head;
+    //Element* head;
 };
 
 void initQueue2(dynamicQueue& q);
@@ -36,4 +36,10 @@ type front2(dynamicQueue& q);
 int isEmpty2(dynamicQueue& q); 
 
 
+//tema 3
+struct Pozitie 
+{
+    int x,y;
+};
+typedef Pozitie Atom;
 #endif
