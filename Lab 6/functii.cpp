@@ -3,7 +3,7 @@
 
 //functii pt coada alocata static 
 
-void initQueue(dynamicQueue& q)
+void initQueue(staticQueue& q)
 {
     q.head=0;
     q.tail=0;
@@ -18,7 +18,7 @@ int nextPos(int index)
     return 0;
 }
 
-void set(dynamicQueue& q, type a)
+void set(staticQueue& q, type a)
 {
     if(q.head==nextPos(q.tail))
     {
@@ -31,12 +31,12 @@ void set(dynamicQueue& q, type a)
     }
 }
 
-int isEmpty(dynamicQueue& q)
+int isEmpty(staticQueue& q)
 {
     return q.head==q.tail;
 }
 
-type get(dynamicQueue& q)
+type get(staticQueue& q)
 {
     type aux;
     
@@ -46,7 +46,7 @@ type get(dynamicQueue& q)
       
 }
 
-type front(dynamicQueue& q)
+type front(staticQueue& q)
 {
     return q.vect[q.head];
 }
@@ -54,18 +54,18 @@ type front(dynamicQueue& q)
 
 //functii pt coada alocata dinamic
 
-void initQueue2(Queue& q)
+void initQueue2(dynamicQueue& q)
 {
     q.head=0;
     q.tail=0;
 }
 
-int isEmpty2(Queue& q)
+int isEmpty2(dynamicQueue& q)
 {
     return q.head==0 && q.tail==0;
 }
 
-void set2(Queue& q, type a)
+void set2(dynamicQueue& q, type a)
 {
     Element* p=new Element;
     p->data=a;
@@ -81,7 +81,7 @@ void set2(Queue& q, type a)
     }
 }
 
-type get2(Queue& q)
+type get2(dynamicQueue& q)
 {
     Element* p;
     type a;
@@ -102,7 +102,7 @@ type get2(Queue& q)
     return a;
 }
 
-type front2(Queue& q)
+type front2(dynamicQueue& q)
 {
     return q.head->data;
 }

@@ -4,16 +4,16 @@
 typedef int type;
 
 //alocata static
-struct dynamicQueue 
+struct staticQueue 
 {
     int head,tail;
     type vect[DIMMAX];
 };
-void initQueue(dynamicQueue& q);
-void set(dynamicQueue& q, type a);
-type get(dynamicQueue& q);
-type front(dynamicQueue& q); 
-int isEmpty(dynamicQueue& q);
+void initQueue(staticQueue& q);
+void set(staticQueue& q, type a);
+type get(staticQueue& q);
+type front(staticQueue& q); 
+int isEmpty(staticQueue& q);
 
 //coada alocata dinamic 
 
@@ -23,17 +23,17 @@ struct Element
     Element* succ;
 };
 
-struct Queue 
+struct dynamicQueue 
 {
     Element* tail;
     Element* head;
 };
 
-void initQueue2(Queue& q);
-void set2(Queue& q, type a);
-type get2(Queue& q);
-type front2(Queue& q); 
-int isEmpty2(Queue& q); 
+void initQueue2(dynamicQueue& q);
+void set2(dynamicQueue& q, type a);
+type get2(dynamicQueue& q);
+type front2(dynamicQueue& q); 
+int isEmpty2(dynamicQueue& q); 
 
 
 #endif
